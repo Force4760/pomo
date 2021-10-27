@@ -1,7 +1,8 @@
 <script lang="ts">
+  import Progress from "./progress.svelte";
   export let minutes: number = 0;
   export let seconds: number = 20;
-  export let mode: string = "work";
+  export let mode: string = "short";
   export let progress: number = 50;
   export let stopped: boolean = true;
 
@@ -37,12 +38,7 @@
     <span style="--value: {seconds};" />
   </span>
 
-  <progress
-    class="progress progress-primary"
-    style="background-color: #2a2e37;"
-    value={progress}
-    max="100"
-  />
+  <Progress {mode} {progress}></Progress>
 
   <p class="font-mono text-2xl">{mode}</p>
 </div>
@@ -62,10 +58,6 @@
     letter-spacing: 0.5rem;
     text-transform: uppercase;
     user-select: none;
-  }
-  progress {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
   }
 
   @media (min-width: 700px) {
