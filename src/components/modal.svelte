@@ -1,9 +1,17 @@
 <script lang="ts">
-  import { work, audio, shortT, longT, toLongT } from "./../scripts/pomo.js";
+  import {
+    work,
+    audio,
+    shortT,
+    longT,
+    toLongT,
+    distraction,
+  } from "./../scripts/pomo.js";
 
   function reset() {
     $work = 25;
     $audio = true;
+    $distraction = false;
     $shortT = 5;
     $longT = 15;
     $toLongT = 4;

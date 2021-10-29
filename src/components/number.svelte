@@ -2,7 +2,7 @@
   export let title: string = "Title";
   export let value: number = 25;
   export let max: number = 60;
-  export let min: number = 0;
+  export let min: number = 1;
   export let step: number = 1;
 
   function confirm() {

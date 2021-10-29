@@ -1,44 +1,22 @@
 <script lang="ts">
+  import { distraction } from "./../scripts/pomo";
   import Progress from "./progress.svelte";
   export let minutes: number = 0;
   export let seconds: number = 20;
-  export let mode: string = "short";
+  export let mode: String = "work";
   export let progress: number = 50;
-  export let stopped: boolean = true;
-
-  let style: string = "";
-  window.setInterval(updateTimer, 1000);
-
-  function updateTimer() {
-    if (!stopped && minutes >= 0) {
-      if (seconds > 0) {
-        seconds--;
-      } else if (minutes > 0) {
-        seconds = 60;
-        minutes--;
-      }
-    }
-  }
-
-  function stopClock() {
-    if (stopped) {
-      stopped = false;
-      style = "";
-    } else {
-      stopped = true;
-      style = "grey";
-    }
-  }
 </script>
 
-<div class="container-div" on:click={stopClock}>
-  <span class="font-mono text-8xl countdown" style="color: {style}">
+<div class="container-div">
+  <span
+    class="font-mono text-8xl countdown"
+    style="color: {$distraction ? '' : '#3d4451'}"
+  >
     <span style="--value: {minutes};" />:
 
     <span style="--value: {seconds};" />
   </span>
-
-  <Progress {mode} {progress}></Progress>
+  <Progress {mode} {progress} />
 
   <p class="font-mono text-2xl">{mode}</p>
 </div>
