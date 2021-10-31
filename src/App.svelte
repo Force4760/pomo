@@ -1,18 +1,25 @@
 <script lang="ts">
   import Settings from "./components/settings.svelte";
   import Clock from "./components/clock.svelte";
-  import { longT, shortT, toLongT, work } from "./scripts/pomo";
+  import { longT, shortT, toLongT, work, audio } from "./scripts/pomo";
 
   const SECS: number = 59;
 
   let mode: String = "work";
   let isStopped: boolean = true;
   let minutes: number = $work;
-  let seconds: number = 60;
-  let times: number = $work;
+  let seconds: number = 0;
+  let times: number = $toLongT;
   let maximum: number = minutes;
+  let audioBell = new Audio("bell.mp3");
 
   let bg: String = "rgba(0, 0, 0, 0.65)";
+
+  function play() {
+    if ($audio) {
+      audioBell.play();
+    }
+  }
 
   function stop() {
     isStopped = !isStopped;
@@ -48,6 +55,7 @@
     } else {
       setWork();
     }
+    play();
   }
 
   window.setInterval(updateTimer, 1000);

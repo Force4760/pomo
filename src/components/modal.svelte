@@ -27,13 +27,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  .modal-toggle {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    z-index: 20;
-  }
-</style>
