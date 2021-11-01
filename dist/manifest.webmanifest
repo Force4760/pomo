@@ -1,1 +1,8 @@
-{"name":"tex","short_name":"tex","start_url":"/","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/"}
+{
+  "name": "Pomo",
+  "short_name": "pomo",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0F69A5",
+  "description": "Minimalistic pomodoro app"
+}
