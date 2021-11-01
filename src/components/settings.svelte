@@ -15,29 +15,12 @@
   } from "./../scripts/pomo.js";
 </script>
 
-<div class="container" on:click={() => (playing = !playing)}>
-  <Button title="Settings" {mode} />
-  <Modal>
-    <Check title="Audio" bind:checked={$audio} />
-    <Check title="Clock" bind:checked={$distraction} />
-    <Num title="Work" bind:value={$work} />
-    <Num title="Short" bind:value={$shortT} />
-    <Num title="Long" bind:value={$longT} />
-    <Num title="To Long" bind:value={$toLongT} max={10} />
-  </Modal>
-</div>
-
-<style>
-  .container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100vh;
-    width: 100vw;
-    transform: translateX(-50%);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-</style>
+<Button title="Settings" {mode} />
+<Modal>
+  <Check title="Audio" bind:checked={$audio} />
+  <Check title="Clock" bind:checked={$distraction} />
+  <Num title="Work" bind:value={$work} />
+  <Num title="Short" bind:value={$shortT} />
+  <Num title="Long" bind:value={$longT} />
+  <Num title="To Long" bind:value={$toLongT} max={10} />
+</Modal>

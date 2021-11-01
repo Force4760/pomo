@@ -2,6 +2,7 @@
   import Settings from "./components/settings.svelte";
   import Clock from "./components/clock.svelte";
   import { longT, shortT, toLongT, work, audio } from "./scripts/pomo";
+  import Button from "./components/button.svelte";
 
   const SECS: number = 59;
 
@@ -86,9 +87,8 @@
     style="background-color: {isStopped ? bg : ''};"
     on:click={stop}
   />
-
-  <Settings {mode} bind:playing={isStopped} />
 </main>
+<Settings {mode} bind:playing={isStopped} />
 
 <style>
   :root {
