@@ -24,12 +24,6 @@
   .btn-down {
     position: absolute;
     bottom: 5%;
-    left: 50%;
-    translate: -50%;
-  }
-
-  .btn-down:focus {
-    transform: none;
+    margin: auto;
   }
 </style>
-

@@ -1,6 +1,7 @@
 <script lang="ts">
   import Settings from "./components/settings.svelte";
   import Clock from "./components/clock.svelte";
+  import Button from "./components/button.svelte";
   import { longT, shortT, toLongT, work, audio } from "./scripts/pomo";
 
   const SECS: number = 59;

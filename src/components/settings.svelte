@@ -3,7 +3,6 @@
   import Check from "./check.svelte";
   import Num from "./number.svelte";
   import Button from "./button.svelte";
-  export let title: String = "Settings";
   export let mode: String = "work";
   import {
     work,
@@ -15,13 +14,28 @@
   } from "./../scripts/pomo.js";
 </script>
 
-<Button {title} {mode} />
+<div class="container">
+  <Button title="Settings" {mode} />
+  <Modal>
+    <Check title="Audio" bind:checked={$audio} />
+    <Check title="Clock" bind:checked={$distraction} />
+    <Num title="Work" bind:value={$work} />
+    <Num title="Short" bind:value={$shortT} />
+    <Num title="Long" bind:value={$longT} />
+    <Num title="To Long" bind:value={$toLongT} max={10} />
+  </Modal>
+</div>
 
-<Modal>
-  <Check title="Audio" bind:checked={$audio} />
-  <Check title="Clock" bind:checked={$distraction} />
-  <Num title="Work" bind:value={$work} />
-  <Num title="Short" bind:value={$shortT} />
-  <Num title="Long" bind:value={$longT} />
-  <Num title="To Long" bind:value={$toLongT} max={10} />
-</Modal>
+<style>
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
