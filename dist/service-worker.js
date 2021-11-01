@@ -1,4 +1,4 @@
- const cacheName = 'mtgtools'
+const cacheName = 'pomo'
 const staticAssets = [
   "./",
   "./index.html",
