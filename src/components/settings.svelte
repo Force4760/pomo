@@ -4,6 +4,7 @@
   import Num from "./number.svelte";
   import Button from "./button.svelte";
   export let mode: String = "work";
+  export let playing: boolean = false;
   import {
     work,
     shortT,
@@ -14,7 +15,7 @@
   } from "./../scripts/pomo.js";
 </script>
 
-<div class="container">
+<div class="container" on:click={() => (playing = !playing)}>
   <Button title="Settings" {mode} />
   <Modal>
     <Check title="Audio" bind:checked={$audio} />
@@ -30,9 +31,10 @@
   .container {
     position: absolute;
     top: 0;
-    left: 0%;
+    left: 50%;
     height: 100vh;
     width: 100vw;
+    transform: translateX(-50%);
 
     display: flex;
     align-items: center;
