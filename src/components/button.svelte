@@ -1,24 +1,3 @@
-<script lang="ts">
-  export let title: String = "Settings";
-  export let mode: String = "short";
-</script>
-
-<!--{#if mode === "work"}
-  <label for="my-modal-2" class="btn btn-down btn-primary modal-button"
-    >{title}</label
-  >
-{:else if mode === "short"}
-  <label for="my-modal-2" class="btn btn-down btn-accent modal-button"
-    >{title}</label
-  >
-  <input type="checkbox" id="my-modal-2" class="modal-toggle" />
-{:else}
-  <label for="my-modal-2" class="btn btn-down btn-secondary modal-button"
-    >{title}</label
-  >
-  <input type="checkbox" id="my-modal-2" class="modal-toggle" />
-{/if}-->
-
 <label
   for="my-modal-2"
   class="btn-down btn btn-outline btn-circle btn-primary modal-button"

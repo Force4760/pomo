@@ -10,7 +10,7 @@
   let isStopped: boolean = true;
   let minutes: number = $work;
   let seconds: number = 0;
-  let times: number = $toLongT;
+  let times: number = 1;
   let maximum: number = minutes;
   let audioBell = new Audio("bell.mp3");
 
@@ -88,7 +88,7 @@
     on:click={stop}
   />
 </main>
-<Settings {mode} bind:playing={isStopped} />
+<Settings />
 
 <style>
   :root {

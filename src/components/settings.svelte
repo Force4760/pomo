@@ -3,8 +3,6 @@
   import Check from "./check.svelte";
   import Num from "./number.svelte";
   import Button from "./button.svelte";
-  export let mode: String = "work";
-  export let playing: boolean = false;
   import {
     work,
     shortT,
@@ -15,7 +13,7 @@
   } from "./../scripts/pomo.js";
 </script>
 
-<Button title="Settings" {mode} />
+<Button />
 <Modal>
   <Check title="Audio" bind:checked={$audio} />
   <Check title="Clock" bind:checked={$distraction} />
